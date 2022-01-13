@@ -1,0 +1,89 @@
+#这是一个测试文件--README翻译！！
+
+CommonAPI C++ SOME/IP Runtime
+
+Copyright
+Copyright (C) 2016-2020, Bayerische Motoren Werke Aktiengesellschaft (BMW AG). Copyright (C) 2016-2020, GENIVI Alliance, Inc.
+This file is part of GENIVI Project IPC Common API C++. Contributions are licensed to the GENIVI Alliance under one or more Contribution License Agreements or MPL 2.0.
+版权
+版权所有（C）2016-2020，巴伐利亚汽车公司（BMW AG）。版权所有（C）2016-2020，GENIVI Alliance，Inc。
+该文件是GENIVI项目IPC通用API C++的一部分。根据一个或多个贡献许可协议或MPL 2.0，将贡献许可给GENIVI联盟。
+
+License
+This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with this file, you can obtain one at 
+http://mozilla.org/MPL/2.0/.
+许可证
+此源代码表单受Mozilla公共许可证v.2.0的条款约束。如果MPL的副本未随此文件分发，您可以在
+http://mozilla.org/MPL/2.0/.
+
+== CommonAPI SOME/IP C++ User Guide The user guide can be found in the documentation directory of the CommonAPI-SomeIP-Tools project as AsciiDoc document. 
+A pdf version can be found at https://github.com/GENIVI/capicxx-someip-tools/releases.
+= CONPLAPI部分/IP C++用户指南，可以在COMPIAPAPI SOMIEP工具项目的文档目录中找到用户指南，作为ASCIIDoc文档。
+pdf版本可在以下网址找到：https://github.com/GENIVI/capicxx-someip-tools/releases.
+
+Further information
+https://genivi.github.io/capicxx-core-tools/
+进一步资料
+https://genivi.github.io/capicxx-core-tools/
+
+Build Instructions for Linux
+CommonAPI Core Runtime and vsomeip
+In order to build the CommonAPI SOME/IP Runtime library the CommonAPI Core Runtime library and the vsomeip library must be available on your system. 
+Please consult the CommonAPI and vsomeip documentation for information on building CommonAPI Core Runtime/vsomeip for Android.
+Linux的构建说明
+CommonAPI核心运行时和vsomeip
+为了构建CommonAPI SOME/IP运行时库，CommonAPI核心运行时库和vsomeip库必须在您的系统上可用。
+有关为Android构建CommonAPI核心运行时/vsomeip的信息，请参阅CommonAPI和vsomeip文档。
+
+Build CommonAPI-SomeIP Runtime
+Use CMake to build the CommonAPI SOME/IP runtime library. We assume that your source directory is common-api-someip-runtime:
+构建公共API SomeIP运行时
+使用CMake构建CommonAPI SOME/IP运行时库。我们假设您的源目录是公共api someip运行时：
+
+$ cd common-api-someip-runtime
+$ mkdir build
+$ cmake -D USE_INSTALLED_COMMONAPI=ON -D CMAKE_INSTALL_PREFIX=/usr/local ..
+$ make
+$ make install
+
+You can change the installation directory by the CMake variable CMAKE_INSTALL_PREFIX or you can let it uninstalled (skip the make install command). 
+If you want to use the uninstalled version of CommonAPI set the CMake variable USE_INSTALLED_COMMONAPI to OFF.
+您可以通过CMake变量CMake_INSTALL_前缀更改安装目录，也可以将其卸载（跳过make INSTALL命令）。
+如果要使用已卸载版本的CommonAPI，请将CMake变量use\u INSTALLED\u CommonAPI设置为OFF。
+
+For further build instructions (build for windows, build documentation, tests etc.) please refer to the CommonAPI SOME/IP tutorial.
+有关进一步的构建说明（针对windows的构建、构建文档、测试等），请参阅CommonAPI SOME/IP教程。
+
+Build Instructions for Android
+CommonAPI Core Runtime and vsomeip
+In order to build the CommonAPI SOME/IP Runtime library the CommonAPI Core Runtime library and the vsomeip library must be included in the Android source tree. 
+Please consult the CommonAPI and vsomeip documentation for information on building CommonAPI Core Runtime/vsomeip for Android.
+Android的构建说明
+CommonAPI核心运行时和vsomeip
+为了构建CommonAPI SOME/IP运行时库，CommonAPI核心运行时库和vsomeip库必须包含在Android源代码树中。
+有关为Android构建CommonAPI核心运行时/vsomeip的信息，请参阅CommonAPI和vsomeip文档。
+
+Build CommonAPI-SomeIP Runtime
+In general for building the Android source tree the instructions found on the pages from the Android Open Source Project (AOSP) 
+apply (https://source.android.com/setup/build/requirements).
+构建公共API SomeIP运行时
+一般来说，要构建Android源代码树，请参阅Android开源项目（AOSP）页面上的说明
+申请(https://source.android.com/setup/build/requirements).
+
+To integrate the CommonAPI SOME/IP Runtime library into the build process, the source code together with the Android.bp file has to be inserted 
+into the Android source tree (by simply copying or by fetching with a custom platform manifest). When building the Android source tree, the Android.bp file is 
+automatically found and considered by the build system.
+要将CommonAPI SOME/IP运行时库集成到构建过程中，请将源代码与Android集成在一起。必须插入bp文件
+进入Android源代码树（通过简单复制或使用自定义平台清单获取）。在构建Android源代码树时，Android。bp文件是
+生成系统自动找到并考虑。
+
+In order that the CommonAPI SOME/IP Runtime library is also included in the Android image, the library has to be added to the PRODUCT_PACKAGES variable 
+in one of a device/target specific makefile:
+为了使CommonAPI SOME/IP运行时库也包含在Android映像中，必须将该库添加到PRODUCT_PACKAGES变量中
+在特定于设备/目标的生成文件之一中：
+
+PRODUCT_PACKAGES += \
+    libCommonAPI-SomeIP
+
+
+
